@@ -1,0 +1,11 @@
+.animate{
+    animation: anim 0.7s ease-in-out infinite;
+}
+@keyframes anim{
+    0%{
+        opacity:0%
+    }
+    100%{
+        opacity: 100%;
+    }
+}
