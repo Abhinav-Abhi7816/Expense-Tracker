@@ -3,6 +3,7 @@ import Income from './Income'
 import Expense from './Expense'
 import Transaction from './Transaction'
 import useDataContext from './Contexts/Context';
+import './Transaction.css'
 import { useEffect, useState } from 'react';
 import { Chart as ChartJS,defaults } from 'chart.js/auto';
 import { Pie } from 'react-chartjs-2';
@@ -124,7 +125,7 @@ function Home() {
           <div className='bg-white w-[50%] min-w-[50%] flex flex-col justify-around place-items-center gap-8 p-8 shadow-2xl rounded-xl' style={{ boxShadow: "2px 4px 20px rgb(0,0,0,0.3)" }}>
             <h1 className='text-3xl font-semibold border-b-2 border-b-black  w-fit px-5'>Overview</h1>
             <div className='flex flex-col gap-6 '>
-              <h1 className={`text-2xl font-semibold text-center ${(balance<0)?'text-red-500 animate':""}`}>The Balance is : ₹ {balance}</h1>
+              <h1 className={`text-2xl font-semibold text-center ${(balance<0)?'text-red-500 animate-blink':""}`}>The Balance is : ₹ {balance}</h1>
               <div className='flex flex-col justify-around gap-8 text-xl'>
                 <div className='flex flex-col justify-center place-items-center gap-3 text-green-500'>
                   <p className='text-4xl font-bold'>₹ {income}</p>
