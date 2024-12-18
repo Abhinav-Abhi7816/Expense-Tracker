@@ -1,0 +1,13 @@
+.animate-transaction{
+    animation: anim 0.3s ease-in-out 1;
+}
+@keyframes anim{
+    0%{
+        margin-top: -100%;
+        opacity: 50%;
+    }
+    100%{
+        margin-top: 0%;
+        opacity: 100%;
+    }
+}

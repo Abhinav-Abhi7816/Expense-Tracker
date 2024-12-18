@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useDataContext from './Contexts/Context';
-
+import "./Transaction.css"
 function Transaction() {
     const { setTranFlag,incomeArr,setIncomeArr,expenseArr,setExpenseArr } = useDataContext();
     const [inputDesc, setInputDesc] = useState("")
@@ -34,7 +34,7 @@ function Transaction() {
         }
     }
     return (
-        <div className='bg-[rgb(0,0,0,0.4)] p-12 w-[100%] rounded-xl'>
+        <div className='bg-[rgb(0,0,0,0.4)] p-12 w-[100%] rounded-xl animate-transaction'>
             <div className='text-xl bg-white flex flex-col justify-between gap-3 place-items-center w-[100%] p-5 px-8 rounded-xl shadow-2xl' style={{ boxShadow: "2px 4px 20px rgb(0,0,0,0.3)" }}>
                 <h1 className='text-2xl font-semibold'>Add New Transaction</h1>
                 <button className='text-slate-600 text-4xl absolute -mt-1' style={{ alignSelf: "flex-end" }} onClick={() => setTranFlag(false)}>⨯</button>

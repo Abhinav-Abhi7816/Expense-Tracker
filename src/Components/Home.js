@@ -4,7 +4,6 @@ import Expense from './Expense'
 import Transaction from './Transaction'
 import useDataContext from './Contexts/Context';
 import { useEffect, useState } from 'react';
-import './Home.css'
 import { Chart as ChartJS,defaults } from 'chart.js/auto';
 import { Pie } from 'react-chartjs-2';
 
