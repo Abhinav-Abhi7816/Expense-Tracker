@@ -2,31 +2,38 @@ import React, { useState } from 'react'
 import useDataContext from './Contexts/Context';
 import "./Transaction.css"
 function Transaction() {
-    const { setTranFlag,incomeArr,setIncomeArr,expenseArr,setExpenseArr } = useDataContext();
+    const { setTranFlag, incomeArr, setIncomeArr, expenseArr, setExpenseArr } = useDataContext();
     const [inputDesc, setInputDesc] = useState("")
     const [inputAmount, setInputAmount] = useState("")
     const [radioIn, setRadioIN] = useState("income")
     function addTrans() {
-        if (inputDesc.trim()==="" || inputAmount.trim()==="" || inputAmount===0)
-        {
+        if (inputDesc.trim() === "" || inputAmount.trim() === "" || inputAmount === 0) {
             alert("Description Or Amount Cannot be Empty or 0!");
             return;
         }
-        else{
-            let transaction={
-                "inputDesc":inputDesc,
-                "inputAmount":parseInt(inputAmount),
-                "radioIn":radioIn
+        if (inputDesc.match(/^[0-9]/)) {
+            alert("The Description should not start with a number");
+            return;
+        }
+
+        if (parseInt(inputAmount) <= 0) {
+            alert("The Amount should not be negative or 0");
+            return;
+        }
+        else {
+            let transaction = {
+                "inputDesc": inputDesc,
+                "inputAmount": parseInt(inputAmount),
+                "radioIn": radioIn
             };
 
-            if(radioIn==="income")
-            {
-                let tempArr1=[...incomeArr];
+            if (radioIn === "income") {
+                let tempArr1 = [...incomeArr];
                 tempArr1.push(transaction);
                 setIncomeArr(tempArr1);
             }
-            else{
-                let tempArr2=[...expenseArr];
+            else {
+                let tempArr2 = [...expenseArr];
                 tempArr2.push(transaction);
                 setExpenseArr(tempArr2);
             }
